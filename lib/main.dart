@@ -1,9 +1,15 @@
+import 'dart:ffi';
+
+import 'package:logger/logger.dart';
 import 'package:Calculator/button.dart';
 import 'package:Calculator/cal_screen.dart';
 import 'package:Calculator/color.dart';
 import 'package:Calculator/keyboard.dart';
 import 'package:flutter/material.dart';
 
+var logger = Logger(
+  printer: PrettyPrinter(),
+);
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -13,6 +19,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var text = "";
+  String firstNum = "";
+  String _screenStep = "";
   double num1 = 0;
   double num2 = 0;
   var opr = "";
@@ -56,18 +64,34 @@ class _MyAppState extends State<MyApp> {
       buttonText = "0";
       num1 = 0;
       num2 = 0;
+      _screenStep = "";
       opr = "";
       output = "";
-    } else if (buttonText == "+" ||
-        buttonText == "-" ||
-        buttonText == "x" ||
-        buttonText == "/") {
-      num1 = double.parse(output);
-      print(num1);
+    } else if (validationOperator(buttonText)) {
+      _screenStep = buttonText;
+      num1 = firstNum.toDouble();
+      logger.v(num1);
+      firstNum = "";
+    } else if (!validationOperator(buttonText)) {
+      //sadece sayıları ekranda gösterir.
+      firstNum += buttonText;
+      _screenStep = firstNum;
     }
 
     setState(() {
-      text = buttonText;
+      text = _screenStep;
     });
+  }
+
+  bool validationOperator(String value) {
+    String pattern = r'^(?=.*?[+-/x])';
+    RegExp regExp = new RegExp(pattern);
+    return regExp.hasMatch(value);
+  }
+}
+
+extension ToDouble on String {
+  double toDouble() {
+    return double.parse(this);
   }
 }
