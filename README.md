@@ -2,7 +2,7 @@
 
 #### Screenshot 
 
-![Flutter Calculator]([https://github.com/VBT-Intership/AbdullahOguz-FlutterCalculator/blob/master/github/ezgif.com-video-to-gif-2.gif)
+![Flutter Calculator](https://raw.githubusercontent.com/VBT-Intership/AbdullahOguz-FlutterCalculator/master/github/ezgif.com-video-to-gif-2.gif)
 
 
 **4 Main Operations**
