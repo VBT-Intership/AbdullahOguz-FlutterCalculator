@@ -2,6 +2,12 @@ import 'package:Calculator/color.dart';
 import 'package:flutter/material.dart';
 import 'package:Calculator/button.dart';
 
+import 'color.dart';
+import 'color.dart';
+import 'color.dart';
+import 'color.dart';
+import 'color.dart';
+
 class Keyboard extends StatelessWidget {
   final CalculatorButtonCallback onTap;
   const Keyboard({
@@ -51,21 +57,21 @@ class Keyboard extends StatelessWidget {
             children: [
               RoundedCalcButton(
                 '7',
-                color: deepBlack,
+                color: blackGray,
                 textColor: softWhite,
                 zeroBtn: false,
                 onTap: onTap,
               ),
               RoundedCalcButton(
                 '8',
-                color: deepBlack,
+                color: blackGray,
                 textColor: softWhite,
                 zeroBtn: false,
                 onTap: onTap,
               ),
               RoundedCalcButton(
                 '9',
-                color: deepBlack,
+                color: blackGray,
                 textColor: softWhite,
                 zeroBtn: false,
                 onTap: onTap,
@@ -83,7 +89,7 @@ class Keyboard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               RoundedCalcButton(
-                '6',
+                '4',
                 color: blackGray,
                 textColor: softWhite,
                 zeroBtn: false,
@@ -97,7 +103,7 @@ class Keyboard extends StatelessWidget {
                 onTap: onTap,
               ),
               RoundedCalcButton(
-                '4',
+                '6',
                 color: blackGray,
                 textColor: softWhite,
                 zeroBtn: false,
@@ -150,14 +156,14 @@ class Keyboard extends StatelessWidget {
             children: [
               RoundedCalcButton(
                 '0',
-                color: deepBlack,
+                color: blackGray,
                 textColor: softWhite,
                 zeroBtn: true,
                 onTap: onTap,
               ),
               RoundedCalcButton(
                 '.',
-                color: deepBlack,
+                color: blackGray,
                 textColor: softWhite,
                 onTap: onTap,
                 zeroBtn: false,
